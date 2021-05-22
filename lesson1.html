@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        alert('Задание 1');
+        tempC = +prompt('Введите температуру в \xB0С');
+        if (!isNaN(tempC)) {
+            tempF = (9/5)*tempC + 32;
+            alert('Это ' + tempF + ' градусов по Фаренгейту');
+        } else {
+            alert('В следующий раз будешь вводить число.');
+        }
+        
+
+        alert('Задание 2 и 3 (см. консоль)');
+        
+        let admin = null;
+        let name = null;
+        name = 'Василий';
+        admin = name;
+        console.log(admin);
+ 
+        //  1. Приоритет слева направо - складываем 10 и 10, получаем 20. 
+        // Дальше складываем со строкой, так что оба значения строки, получаем 2010 
+
+        console.log(10 + 10 + "10");
+
+        // 2. Сразу идет сложение со строкой, так что все три операнда преобразуются в строки - итого 101010
+
+        console.log(10 + "10" + 10);
+        
+        // 3. Тут строка унарным плюсом превращается в число, все операнды - числа, результат 30
+
+        console.log(10 + 10 + + "10");
+
+        // 4. Унарный минус на пустую строку дает -0 (прикольно). Деление на -0  = минус бесконечность
+
+        console.log(10 / -"");
+
+        // 5. Результат NaN, т.к. мы пытаемся делить число на не число (для дробей должна использоваться точка)
+
+        console.log(10 / +"2,5");
+        
+
+    </script>
+</head>
+<body>
+    <h1>Scripts for lesson 1</h1>
+</body>
+</html>
