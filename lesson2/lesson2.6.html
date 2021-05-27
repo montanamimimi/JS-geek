@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        "use strict";
+
+        // Программа должна спросить у пользователячисло, это будетколичество денег, которое он хочет положить на счет вбанке.Затем программа должна выдать примерно такое сообщение...
+        
+        // не хочется работать со строками без необходимости, вот так больше нравится. Будет работать даже если ввели число с копейками, просто про них мы не будем упоминать. 
+
+        let moneys = prompt("Введите сумму для перевода (положительное число)");
+
+        if (isNaN(moneys)) {
+            alert ("Число же!");
+        } else if (moneys < 0) {
+            alert ("Положительное же!");
+        }
+
+
+        // Делим на 10, округляем в меньшую сторону число и умножаем на 10. Получаем число money где вместо последней цифры - 0.
+        let check = Math.floor(moneys/10);
+        check *= 10;
+
+        // Вычитаем это из первоначальной суммы - получаем последнюю цифру. 
+        let lastNumber = moneys - check;
+
+        let rur = null;
+
+        switch (lastNumber) {
+            case 0:
+            case 5:
+            case 6: 
+            case 7: 
+            case 8: 
+            case 9:
+                rur = "рублей";
+                break;
+            case 1: 
+                rur = "рубль";
+                break;
+            case 2: 
+            case 3: 
+            case 4:
+                rur = "рубля";
+                break;
+        }
+
+        alert(`Ваша сумма в ${moneys} ${rur} успешно зачислена.`);
+
+
+       
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html> 

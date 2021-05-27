@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя параметрами.Т.е. например,функция для сложения должна принимать два числа, складывать их и возвращать результат.Обязательно использовать оператор return.
+
+        function mySum(x, y) {
+            return x + y;
+        }
+
+        console.log(mySum(2,3));
+
+        function mySub(x, y) {
+            return x - y;
+        }
+
+        console.log(mySub(10,3));
+
+        function myMult(x, y) {
+            return x*y;
+        }
+
+        console.log(myMult(2,2));
+
+        function myDiv(x, y) {
+            return x/y;
+        }
+
+        console.log(myDiv(21,3));
+
+         // Реализоватьфункцию с тремя параметрами: function mathOperation(arg1, arg2, operation),где arg1, arg2 –значения аргументов, operation –строка с названием операции. В зависимости отпереданного значения операции (использовать switch) выполнить одну из арифметических операций(использовать функции из задания 4) и вернуть полученное значение.
+
+        
+        function mathOperation(x,y, operation) {
+            switch (operation) {
+                case "sum":
+                    return mySum(x,y);
+                case "sub":
+                    return mySyb(x,y);
+                case "mult":
+                    return myMult(x,y);
+                case "dev":
+                    return myDev(x,y);
+                default: 
+                    return "допустимые операции: sum, sub, mult, dev";
+            }
+        }
+
+        console.log(mathOperation(10, 4, "mult"));
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html> 
