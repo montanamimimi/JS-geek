@@ -4,8 +4,6 @@
 let game = {
     run() {
 
-        console.log(allQuestions);
-
         let right = 0;
 
         for (let i = 0; i < allQuestions.length; i++) {
