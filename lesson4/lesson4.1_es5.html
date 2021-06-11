@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        "use strict";
+
+        // 1.1 в es5 
+
+        function Product(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        Product.prototype.make25PercentDiscount = function () {
+            this.price *= 0.75;
+        };
+
+        let shirt = new Product("t-Shirt", 100);
+        console.log(shirt);
+
+        shirt.make25PercentDiscount();
+
+        console.log(shirt);
+
+        // 1.2 в es5 
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function(text) {
+            this.text = text;
+        };
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        }
+
+        let post1 = new Post("Lena", "Hello", new Date());
+        console.log(post1);
+        post1.edit("Goodbye");
+        console.log(post1);
+
+        let attachedPost1 = new AttachedPost("Mike", "Don't worry", new Date());
+        console.log(attachedPost1);
+
+        attachedPost1.edit("Be happy");
+        attachedPost1.makeTextHighlighted();
+
+        console.log(attachedPost1);
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html> 
